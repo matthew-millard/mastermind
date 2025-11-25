@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
-require_relative 'lib/peg'
+require_relative 'lib/game'
 
-puts Peg.new('Pink').color
+game = Game.new
+
+game.play

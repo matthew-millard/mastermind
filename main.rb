@@ -4,9 +4,7 @@ require_relative 'lib/game'
 
 game = Game.new
 
-game.play
-
-p game.board.rows[0].pegs
+game.board.display
 
 # Start game.
 # A secret code has been generated.

@@ -4,7 +4,7 @@
 class Peg
   attr_reader :color
 
-  PEG_COLORS = %w[Red Yellow Pink Green Orange Blue].freeze
+  PEG_COLORS = %w[Red Yellow Purple Green Orange Blue].freeze
 
   def initialize(color)
     @color = valid_color?(color)

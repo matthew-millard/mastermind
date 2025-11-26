@@ -12,8 +12,4 @@ class Game
     @board = Board.new
     @secret_code = CodeMaker.new.secret_code
   end
-
-  def play
-    puts 'Let\'s play!'
-  end
 end

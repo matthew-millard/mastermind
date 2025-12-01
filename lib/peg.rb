@@ -1,20 +1,27 @@
 # frozen_string_literal: true
 
-# A coloured peg class
+require 'colorize'
+
 class Peg
-  attr_reader :color
+  attr_accessor :color
 
-  PEG_COLORS = %w[Red Yellow Purple Green Orange Blue].freeze
-
-  def initialize(color)
-    @color = valid_color?(color)
+  def initialize(color = nil)
+    @color = color
   end
 
-  def valid_color?(color)
-    return color if PEG_COLORS.include?(color)
+  def to_s
+    return '○' if color.nil?
 
-    raise ArgumentError, 'Invalid color provided as argument.'
-  rescue ArgumentError => e
-    puts e.message
+    case color
+    when 'Red'    then '●'.colorize(:red)
+    when 'Yellow' then '●'.colorize(:yellow)
+    when 'Purple' then '●'.colorize(:magenta)
+    when 'Green'  then '●'.colorize(:green)
+    when 'Orange' then '●'.colorize(:light_red)
+    when 'Blue'   then '●'.colorize(:blue)
+    when 'Black'  then '●'.colorize(:black)
+    when 'White'  then '○'.colorize(:white)
+    else '○'
+    end
   end
 end
